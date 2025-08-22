@@ -129,6 +129,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+CompByDist.o: CompByDist.cpp.o
+.PHONY : CompByDist.o
+
+# target to build an object file
+CompByDist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/CompByDist.cpp.o
+.PHONY : CompByDist.cpp.o
+
+CompByDist.i: CompByDist.cpp.i
+.PHONY : CompByDist.i
+
+# target to preprocess a source file
+CompByDist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/CompByDist.cpp.i
+.PHONY : CompByDist.cpp.i
+
+CompByDist.s: CompByDist.cpp.s
+.PHONY : CompByDist.s
+
+# target to generate assembly for a file
+CompByDist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/CompByDist.cpp.s
+.PHONY : CompByDist.cpp.s
+
 Graph.o: Graph.cpp.o
 .PHONY : Graph.o
 
@@ -152,6 +176,30 @@ Graph.s: Graph.cpp.s
 Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
+
+Road.o: Road.cpp.o
+.PHONY : Road.o
+
+# target to build an object file
+Road.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Road.cpp.o
+.PHONY : Road.cpp.o
+
+Road.i: Road.cpp.i
+.PHONY : Road.i
+
+# target to preprocess a source file
+Road.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Road.cpp.i
+.PHONY : Road.cpp.i
+
+Road.s: Road.cpp.s
+.PHONY : Road.s
+
+# target to generate assembly for a file
+Road.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Road.cpp.s
+.PHONY : Road.cpp.s
 
 Utilities.o: Utilities.cpp.o
 .PHONY : Utilities.o
@@ -234,9 +282,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... CompByDist.o"
+	@echo "... CompByDist.i"
+	@echo "... CompByDist.s"
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
+	@echo "... Road.o"
+	@echo "... Road.i"
+	@echo "... Road.s"
 	@echo "... Utilities.o"
 	@echo "... Utilities.i"
 	@echo "... Utilities.s"

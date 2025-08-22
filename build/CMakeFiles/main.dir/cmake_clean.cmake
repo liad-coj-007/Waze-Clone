@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/main.dir/CompByDist.cpp.o"
+  "CMakeFiles/main.dir/CompByDist.cpp.o.d"
   "CMakeFiles/main.dir/Graph.cpp.o"
   "CMakeFiles/main.dir/Graph.cpp.o.d"
+  "CMakeFiles/main.dir/Road.cpp.o"
+  "CMakeFiles/main.dir/Road.cpp.o.d"
   "CMakeFiles/main.dir/Utilities.cpp.o"
   "CMakeFiles/main.dir/Utilities.cpp.o.d"
   "CMakeFiles/main.dir/Vertex.cpp.o"
