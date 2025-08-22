@@ -1,22 +1,28 @@
 #pragma once
-
 #include <deque>
-
+#include <cstddef>  // מגדיר size_t
+#include "CompWeight.h"
 class Vertex; // forward declaration
+class Graph;
 
-class Weight {
-    // TODO: add weight logic
-};
+
+
+/**
+ * @brief eq the vertexs 
+ * @return true if v1 cordinates smaller then v2 cordinates
+*/
+bool operator<(const Vertex& v1,const Vertex &v2);
 
 struct Edge {
     Vertex* vertex;
-    Weight weight;
+    Road road;
+    Edge(Vertex &v1,Vertex &v2,const size_t flags);
 };
 
 struct Vertex {
     int idx;         // the idx of the vertex in the graph
     double lat, lon;
-    
+    Graph* my_graph;
     // sorted list of edges
     std::deque<Edge> edges;
 
@@ -25,3 +31,5 @@ struct Vertex {
      */
     Vertex(const double& lat, const double& lon);
 };
+
+
