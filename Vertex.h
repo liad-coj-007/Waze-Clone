@@ -1,28 +1,27 @@
 #pragma once
+
 #include <deque>
-using namespace std;
 
+class Vertex; // forward declaration
 
-
-struct Edge{
-   Vertex* vertex;
-   Weight weight;
+class Weight {
+    // TODO: add weight logic
 };
 
-struct Vertex{
-    //map to the graph
-    
-    int idx;// the idx of the vertex in the graph
+struct Edge {
+    Vertex* vertex;
+    Weight weight;
+};
+
+struct Vertex {
+    int idx;         // the idx of the vertex in the graph
     double lat, lon;
-    //sorted list of edges
-    deque<Edge> deque;
+    
+    // sorted list of edges
+    std::deque<Edge> edges;
+
     /**
-     * @brief build a vertex
-    */
+     * @brief Build a vertex
+     */
     Vertex(const double& lat, const double& lon);
-};
-
-
-
-class Weight{
 };
