@@ -4,6 +4,7 @@
 
 class CompWeight{
 public:
+    CompWeight() = default;
     /**
      * @brief compute the weight of the edge
     */
