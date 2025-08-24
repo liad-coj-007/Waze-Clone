@@ -15,7 +15,7 @@ Vertex& Graph::operator[](const size_t idx){
 }
 
 Edge* Graph::find_edge(const Vertex& v1,const Vertex& v2)const{
-    for(auto it : v1.edges){
+    for(auto it : v1.out_edges){
         if(it.vertex == &v2){
             return &it;
         }
@@ -23,18 +23,37 @@ Edge* Graph::find_edge(const Vertex& v1,const Vertex& v2)const{
     return nullptr;
 }
 
+Edge* Graph::find_edge(const Vertex& vertex, deque<Edge>& edges){
+    for(auto it : edges){
+        if(it.vertex == &vertex){
+            return &it;
+        }
+    }
+    return nullptr;
+}
+
+
 void Graph::AddEdge( Vertex& v1, Vertex &v2,const size_t flags){
    Edge* my_edge = find_edge(v1,v2);
    if (my_edge != nullptr){
         my_edge->road.flags = flags;
+        Edge* e2 = find_edge(v1,v2.in_edges);
+        e2->road.flags = flags;
         return;
    }
 
-   std::deque<Edge> edges;
-   Edge edge(v1,v2,flags);
+   Edge e1(v1,v2,flags);
+   v1.out_edges = std::move(AddEdge(v1.out_edges,e1));
+   Edge e2(v2,v1,flags);
+   v2.in_edges = std::move(AddEdge(v2.in_edges,e2));
+
+}
+
+deque<Edge> Graph::AddEdge(deque<Edge>& old_edges,Edge edge){
+   deque<Edge> edges;
    bool is_put = false;
-   for(auto it : v1.edges){
-       if(!is_put && v2 < *(it.vertex)){
+   for(auto it : old_edges){
+       if(!is_put && *(edge.vertex) < *(it.vertex)){
             is_put = true;
             edges.push_back(edge);
        }
@@ -45,5 +64,18 @@ void Graph::AddEdge( Vertex& v1, Vertex &v2,const size_t flags){
         edges.push_back(edge);
    }
 
-   v1.edges = std::move(edges);
+   return edges;
 }
+
+
+
+
+
+
+DistFunction Graph::AStar(Vertex &from, Vertex& to){
+    DistFunction distfunc;
+    return distfunc;
+}
+
+
+

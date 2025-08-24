@@ -153,6 +153,30 @@ CompByDist.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/CompByDist.cpp.s
 .PHONY : CompByDist.cpp.s
 
+Dist.o: Dist.cpp.o
+.PHONY : Dist.o
+
+# target to build an object file
+Dist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Dist.cpp.o
+.PHONY : Dist.cpp.o
+
+Dist.i: Dist.cpp.i
+.PHONY : Dist.i
+
+# target to preprocess a source file
+Dist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Dist.cpp.i
+.PHONY : Dist.cpp.i
+
+Dist.s: Dist.cpp.s
+.PHONY : Dist.s
+
+# target to generate assembly for a file
+Dist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Dist.cpp.s
+.PHONY : Dist.cpp.s
+
 Graph.o: Graph.cpp.o
 .PHONY : Graph.o
 
@@ -176,6 +200,30 @@ Graph.s: Graph.cpp.s
 Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
+
+Heap.o: Heap.cpp.o
+.PHONY : Heap.o
+
+# target to build an object file
+Heap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Heap.cpp.o
+.PHONY : Heap.cpp.o
+
+Heap.i: Heap.cpp.i
+.PHONY : Heap.i
+
+# target to preprocess a source file
+Heap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Heap.cpp.i
+.PHONY : Heap.cpp.i
+
+Heap.s: Heap.cpp.s
+.PHONY : Heap.s
+
+# target to generate assembly for a file
+Heap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Heap.cpp.s
+.PHONY : Heap.cpp.s
 
 Road.o: Road.cpp.o
 .PHONY : Road.o
@@ -285,9 +333,15 @@ help:
 	@echo "... CompByDist.o"
 	@echo "... CompByDist.i"
 	@echo "... CompByDist.s"
+	@echo "... Dist.o"
+	@echo "... Dist.i"
+	@echo "... Dist.s"
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
+	@echo "... Heap.o"
+	@echo "... Heap.i"
+	@echo "... Heap.s"
 	@echo "... Road.o"
 	@echo "... Road.i"
 	@echo "... Road.s"

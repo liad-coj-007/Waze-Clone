@@ -132,5 +132,7 @@ CMakeFiles/main.dir/CompByDist.cpp.o: /root/projects/Waze/CompByDist.cpp \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
- /usr/include/c++/11/bits/basic_string.tcc /root/projects/Waze/Road.h \
- /usr/include/c++/11/cstddef
+ /usr/include/c++/11/bits/basic_string.tcc /root/projects/Waze/Vertex.h \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/cstddef /root/projects/Waze/Road.h

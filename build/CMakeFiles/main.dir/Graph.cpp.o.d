@@ -138,7 +138,7 @@ CMakeFiles/main.dir/Graph.cpp.o: /root/projects/Waze/Graph.cpp \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc /root/projects/Waze/Road.h \
- /usr/include/c++/11/unordered_map \
+ /root/projects/Waze/Dist.h /usr/include/c++/11/unordered_map \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h /usr/include/c++/11/tuple \
@@ -148,4 +148,5 @@ CMakeFiles/main.dir/Graph.cpp.o: /root/projects/Waze/Graph.cpp \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/queue \
+ /usr/include/c++/11/bits/stl_heap.h /usr/include/c++/11/bits/stl_queue.h

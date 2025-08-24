@@ -18,3 +18,8 @@ bool operator<(const Vertex& v1,const Vertex &v2){
     }
     return v1.lat == v2.lat && v1.lon < v2.lon;
 }
+
+bool operator==(const Vertex& v1,const Vertex& v2){
+    return v1.lat == v2.lat && v1.lon == v2.lon;
+}
+

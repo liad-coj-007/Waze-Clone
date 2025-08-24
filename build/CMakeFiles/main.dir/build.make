@@ -73,85 +73,113 @@ CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /root/projects/Waze/main.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /root/projects/Waze/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 CMakeFiles/main.dir/Graph.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Graph.cpp.o: ../Graph.cpp
 CMakeFiles/main.dir/Graph.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/Graph.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Graph.cpp.o -MF CMakeFiles/main.dir/Graph.cpp.o.d -o CMakeFiles/main.dir/Graph.cpp.o -c /root/projects/Waze/Graph.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Graph.cpp.o -MF CMakeFiles/main.dir/Graph.cpp.o.d -o CMakeFiles/main.dir/Graph.cpp.o -c /root/projects/Waze/Graph.cpp
 
 CMakeFiles/main.dir/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Graph.cpp > CMakeFiles/main.dir/Graph.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Graph.cpp > CMakeFiles/main.dir/Graph.cpp.i
 
 CMakeFiles/main.dir/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Graph.cpp -o CMakeFiles/main.dir/Graph.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Graph.cpp -o CMakeFiles/main.dir/Graph.cpp.s
 
 CMakeFiles/main.dir/Utilities.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Utilities.cpp.o: ../Utilities.cpp
 CMakeFiles/main.dir/Utilities.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Utilities.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Utilities.cpp.o -MF CMakeFiles/main.dir/Utilities.cpp.o.d -o CMakeFiles/main.dir/Utilities.cpp.o -c /root/projects/Waze/Utilities.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Utilities.cpp.o -MF CMakeFiles/main.dir/Utilities.cpp.o.d -o CMakeFiles/main.dir/Utilities.cpp.o -c /root/projects/Waze/Utilities.cpp
 
 CMakeFiles/main.dir/Utilities.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Utilities.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Utilities.cpp > CMakeFiles/main.dir/Utilities.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Utilities.cpp > CMakeFiles/main.dir/Utilities.cpp.i
 
 CMakeFiles/main.dir/Utilities.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Utilities.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Utilities.cpp -o CMakeFiles/main.dir/Utilities.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Utilities.cpp -o CMakeFiles/main.dir/Utilities.cpp.s
 
 CMakeFiles/main.dir/Vertex.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Vertex.cpp.o: ../Vertex.cpp
 CMakeFiles/main.dir/Vertex.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/Vertex.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Vertex.cpp.o -MF CMakeFiles/main.dir/Vertex.cpp.o.d -o CMakeFiles/main.dir/Vertex.cpp.o -c /root/projects/Waze/Vertex.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Vertex.cpp.o -MF CMakeFiles/main.dir/Vertex.cpp.o.d -o CMakeFiles/main.dir/Vertex.cpp.o -c /root/projects/Waze/Vertex.cpp
 
 CMakeFiles/main.dir/Vertex.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Vertex.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Vertex.cpp > CMakeFiles/main.dir/Vertex.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Vertex.cpp > CMakeFiles/main.dir/Vertex.cpp.i
 
 CMakeFiles/main.dir/Vertex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Vertex.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Vertex.cpp -o CMakeFiles/main.dir/Vertex.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Vertex.cpp -o CMakeFiles/main.dir/Vertex.cpp.s
 
 CMakeFiles/main.dir/CompByDist.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/CompByDist.cpp.o: ../CompByDist.cpp
 CMakeFiles/main.dir/CompByDist.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/CompByDist.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/CompByDist.cpp.o -MF CMakeFiles/main.dir/CompByDist.cpp.o.d -o CMakeFiles/main.dir/CompByDist.cpp.o -c /root/projects/Waze/CompByDist.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/CompByDist.cpp.o -MF CMakeFiles/main.dir/CompByDist.cpp.o.d -o CMakeFiles/main.dir/CompByDist.cpp.o -c /root/projects/Waze/CompByDist.cpp
 
 CMakeFiles/main.dir/CompByDist.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/CompByDist.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/CompByDist.cpp > CMakeFiles/main.dir/CompByDist.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/CompByDist.cpp > CMakeFiles/main.dir/CompByDist.cpp.i
 
 CMakeFiles/main.dir/CompByDist.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/CompByDist.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/CompByDist.cpp -o CMakeFiles/main.dir/CompByDist.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/CompByDist.cpp -o CMakeFiles/main.dir/CompByDist.cpp.s
 
 CMakeFiles/main.dir/Road.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Road.cpp.o: ../Road.cpp
 CMakeFiles/main.dir/Road.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/Road.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Road.cpp.o -MF CMakeFiles/main.dir/Road.cpp.o.d -o CMakeFiles/main.dir/Road.cpp.o -c /root/projects/Waze/Road.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Road.cpp.o -MF CMakeFiles/main.dir/Road.cpp.o.d -o CMakeFiles/main.dir/Road.cpp.o -c /root/projects/Waze/Road.cpp
 
 CMakeFiles/main.dir/Road.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Road.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Road.cpp > CMakeFiles/main.dir/Road.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Road.cpp > CMakeFiles/main.dir/Road.cpp.i
 
 CMakeFiles/main.dir/Road.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Road.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Road.cpp -o CMakeFiles/main.dir/Road.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Road.cpp -o CMakeFiles/main.dir/Road.cpp.s
+
+CMakeFiles/main.dir/Dist.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Dist.cpp.o: ../Dist.cpp
+CMakeFiles/main.dir/Dist.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/Dist.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Dist.cpp.o -MF CMakeFiles/main.dir/Dist.cpp.o.d -o CMakeFiles/main.dir/Dist.cpp.o -c /root/projects/Waze/Dist.cpp
+
+CMakeFiles/main.dir/Dist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Dist.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Dist.cpp > CMakeFiles/main.dir/Dist.cpp.i
+
+CMakeFiles/main.dir/Dist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Dist.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Dist.cpp -o CMakeFiles/main.dir/Dist.cpp.s
+
+CMakeFiles/main.dir/Heap.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Heap.cpp.o: ../Heap.cpp
+CMakeFiles/main.dir/Heap.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/Heap.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Heap.cpp.o -MF CMakeFiles/main.dir/Heap.cpp.o.d -o CMakeFiles/main.dir/Heap.cpp.o -c /root/projects/Waze/Heap.cpp
+
+CMakeFiles/main.dir/Heap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Heap.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Waze/Heap.cpp > CMakeFiles/main.dir/Heap.cpp.i
+
+CMakeFiles/main.dir/Heap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Heap.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Waze/Heap.cpp -o CMakeFiles/main.dir/Heap.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -160,7 +188,9 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/Utilities.cpp.o" \
 "CMakeFiles/main.dir/Vertex.cpp.o" \
 "CMakeFiles/main.dir/CompByDist.cpp.o" \
-"CMakeFiles/main.dir/Road.cpp.o"
+"CMakeFiles/main.dir/Road.cpp.o" \
+"CMakeFiles/main.dir/Dist.cpp.o" \
+"CMakeFiles/main.dir/Heap.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -171,9 +201,11 @@ main: CMakeFiles/main.dir/Utilities.cpp.o
 main: CMakeFiles/main.dir/Vertex.cpp.o
 main: CMakeFiles/main.dir/CompByDist.cpp.o
 main: CMakeFiles/main.dir/Road.cpp.o
+main: CMakeFiles/main.dir/Dist.cpp.o
+main: CMakeFiles/main.dir/Heap.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/projects/Waze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

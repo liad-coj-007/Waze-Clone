@@ -2,7 +2,17 @@
 using namespace std;
 #include <vector>
 #include "Vertex.h"
-#include <unordered_map>
+#include "Dist.h"
+#include <queue>
+#include <utility>
+
+
+
+class Path{
+    std::deque<Edge> edges;
+    double dist;
+};
+
 class Graph{
 public:
 
@@ -33,12 +43,43 @@ public:
 
     ~Graph() = default;
 
+    /**
+     * @brief find the optimal path from vertex from to dest
+     * @param from - the vertex we start from
+     * @param dest - the vertex we finish from
+    */
+    Path find_route( Vertex& from, Vertex &dest,const CompWeight& comp);
+
+
 
 private:
+
     /**
      * @brief return the edge of the graph
     */
     Edge* find_edge(const Vertex& v1,const Vertex& v2)const;
+
+    /**
+     * @brief find the edge base on vertex
+    */
+    Edge* find_edge(const Vertex& vertex, deque<Edge>& edges);
+
+    /**
+     * @brief add edge to the deque
+     * @param old_edges - edges list we want to add to
+     * @param edge - the edge we add
+    */
+    deque<Edge> AddEdge(deque<Edge>& old_edges,Edge edge);
+
+    /**
+     * @brief do A star algo to find the dist function
+     * @param from the vertex we start from
+     * @param to the vertex we want to go
+     * @return the distfunction we found
+    */
+    DistFunction AStar( Vertex &from , Vertex &to);
+
+
     vector<Vertex> vertexs;
 
 };

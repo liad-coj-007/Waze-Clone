@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/main.cpp.o -c /root/projects/Waze/main.cpp",
+  "file": "/root/projects/Waze/main.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/Graph.cpp.o -c /root/projects/Waze/Graph.cpp",
+  "file": "/root/projects/Waze/Graph.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/Utilities.cpp.o -c /root/projects/Waze/Utilities.cpp",
+  "file": "/root/projects/Waze/Utilities.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/Vertex.cpp.o -c /root/projects/Waze/Vertex.cpp",
+  "file": "/root/projects/Waze/Vertex.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/CompByDist.cpp.o -c /root/projects/Waze/CompByDist.cpp",
+  "file": "/root/projects/Waze/CompByDist.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/Road.cpp.o -c /root/projects/Waze/Road.cpp",
+  "file": "/root/projects/Waze/Road.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/Dist.cpp.o -c /root/projects/Waze/Dist.cpp",
+  "file": "/root/projects/Waze/Dist.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/Heap.cpp.o -c /root/projects/Waze/Heap.cpp",
+  "file": "/root/projects/Waze/Heap.cpp"
+}
+]
