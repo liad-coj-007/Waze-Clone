@@ -2,6 +2,7 @@
 #include <cstddef>  
 #include <functional>
 #include "Vertex.h"
+#include "Utilities.h"
 
 
 
@@ -17,6 +18,7 @@ Dist::Dist(Vertex* vertex){
     this->is_inf = true;
     is_on_heap = false;
     heap_idx = 0;
+    huristic = 0;
     
 }
 
@@ -39,6 +41,25 @@ bool Dist::FixDist(const double &dist){
 
 Dist::Dist():Dist(nullptr){}
 
+void Dist::Init(){
+    is_inf = false;
+    totaldist = 0;
+}
+
+Dist Dist::BuildFixDist(Dist& other,const Edge& edge,
+Vertex& to,const CompWeight& compweight){
+    Dist new_dist = other;
+    if(new_dist.is_inf){
+        return new_dist;
+    }
+    new_dist.vertex = edge.vertex;
+    new_dist.huristic = getDistance(*(new_dist.vertex),to);
+    new_dist.totaldist += edge.getWeight(compweight);
+    return new_dist;
+}
+
+
+
 Dist& DistFunction::operator[]( Vertex& vertex){
     auto it = map.find(vertex);
     if(it != map.end()){
@@ -50,7 +71,11 @@ Dist& DistFunction::operator[]( Vertex& vertex){
 }
 
 bool operator<(const Dist &d1,const Dist &d2){
-    return !d1.is_inf && d1.totaldist < d2.totaldist;
+    if(d2.is_inf && !d1.is_inf){
+        return true;
+    }
+    return !d1.is_inf && 
+    d1.totaldist + d1.huristic < d2.totaldist + d2.huristic;
 }
 
 

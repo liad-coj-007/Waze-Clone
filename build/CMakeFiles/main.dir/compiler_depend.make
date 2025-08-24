@@ -219,6 +219,7 @@ CMakeFiles/main.dir/Dist.cpp.o: ../Dist.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  ../Road.h \
   ../CompWeight.h \
   ../Utilities.h \
   /usr/include/c++/11/stdexcept \
@@ -335,7 +336,6 @@ CMakeFiles/main.dir/Dist.cpp.o: ../Dist.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  ../Road.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/hashtable.h \
@@ -419,6 +419,7 @@ CMakeFiles/main.dir/Graph.cpp.o: ../Graph.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  ../Road.h \
   ../CompWeight.h \
   ../Utilities.h \
   /usr/include/c++/11/stdexcept \
@@ -533,7 +534,6 @@ CMakeFiles/main.dir/Graph.cpp.o: ../Graph.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  ../Road.h \
   ../Dist.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/ext/aligned_buffer.h \
@@ -549,9 +549,7 @@ CMakeFiles/main.dir/Graph.cpp.o: ../Graph.cpp \
   /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /usr/include/c++/11/queue \
-  /usr/include/c++/11/bits/stl_heap.h \
-  /usr/include/c++/11/bits/stl_queue.h
+  ../Heap.h
 
 CMakeFiles/main.dir/Heap.cpp.o: ../Heap.cpp \
   /usr/include/stdc-predef.h \
@@ -604,6 +602,7 @@ CMakeFiles/main.dir/Heap.cpp.o: ../Heap.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  ../Road.h \
   ../CompWeight.h \
   ../Utilities.h \
   /usr/include/c++/11/stdexcept \
@@ -720,7 +719,6 @@ CMakeFiles/main.dir/Heap.cpp.o: ../Heap.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  ../Road.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/hashtable.h \
@@ -1109,8 +1107,8 @@ CMakeFiles/main.dir/Utilities.cpp.o: ../Utilities.cpp \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/cstddef \
-  ../CompWeight.h \
   ../Road.h \
+  ../CompWeight.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -1186,6 +1184,7 @@ CMakeFiles/main.dir/Vertex.cpp.o: ../Vertex.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  ../Road.h \
   ../CompWeight.h \
   ../Utilities.h \
   /usr/include/c++/11/stdexcept \
@@ -1302,7 +1301,6 @@ CMakeFiles/main.dir/Vertex.cpp.o: ../Vertex.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  ../Road.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -1331,10 +1329,8 @@ CMakeFiles/main.dir/Vertex.cpp.o: ../Vertex.cpp \
 
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
-  ../Heap.h \
-  ../Dist.h \
-  ../Vertex.h \
-  /usr/include/c++/11/deque \
+  ../Graph.h \
+  /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -1374,12 +1370,20 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/ext/alloc_traits.h \
   /usr/include/c++/11/bits/alloc_traits.h \
-  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/initializer_list \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/functional_hash.h \
+  /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/range_access.h \
+  /usr/include/c++/11/bits/vector.tcc \
+  ../Vertex.h \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  ../Road.h \
   ../CompWeight.h \
   ../Utilities.h \
   /usr/include/c++/11/stdexcept \
@@ -1387,7 +1391,6 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
   /usr/include/c++/11/typeinfo \
-  /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/nested_exception.h \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/stringfwd.h \
@@ -1462,7 +1465,6 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/c++/11/string_view \
-  /usr/include/c++/11/bits/functional_hash.h \
   /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/cstdlib \
@@ -1496,7 +1498,7 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  ../Road.h \
+  ../Dist.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/hashtable.h \
@@ -1511,12 +1513,8 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /usr/include/c++/11/vector \
-  /usr/include/c++/11/bits/stl_vector.h \
-  /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc \
-  /usr/include/c++/11/cassert \
-  /usr/include/assert.h \
+  ../Heap.h \
+  ../CompByDist.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -1539,10 +1537,19 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/ctime \
+  /usr/include/c++/11/bits/parse_numbers.h
 
 
-/usr/include/c++/11/bits/istream.tcc:
+/usr/include/c++/11/bits/parse_numbers.h:
+
+/usr/include/c++/11/ctime:
+
+/usr/include/c++/11/ratio:
 
 /usr/include/c++/11/bits/functional_hash.h:
 
@@ -1694,8 +1701,6 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/wchar.h:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
 /usr/include/c++/11/bits/alloc_traits.h:
 
 /usr/include/stdc-predef.h:
@@ -1810,6 +1815,10 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/debug/debug.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/11/cstdlib:
@@ -1825,12 +1834,6 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/c++/11/bits/stl_queue.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
@@ -1860,9 +1863,11 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/alloca.h:
 
-/usr/include/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/include/c++/11/queue:
+/usr/include/c++/11/chrono:
+
+/usr/include/stdio.h:
 
 ../Utilities.cpp:
 
@@ -1960,13 +1965,13 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
 
 ../Graph.h:
 
+../Heap.h:
+
 /usr/include/c++/11/cstdio:
 
 ../Heap.cpp:
 
 ../main.cpp:
-
-../Heap.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
@@ -2057,3 +2062,5 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/basic_ios.tcc:
 
 /usr/include/c++/11/istream:
+
+/usr/include/c++/11/bits/istream.tcc:

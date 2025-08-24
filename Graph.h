@@ -3,8 +3,9 @@ using namespace std;
 #include <vector>
 #include "Vertex.h"
 #include "Dist.h"
-#include <queue>
-#include <utility>
+#include "Heap.h"
+
+
 
 
 
@@ -44,6 +45,14 @@ public:
     ~Graph() = default;
 
     /**
+     * @brief do A star algo to find the dist function
+     * @param from the vertex we start from
+     * @param to the vertex we want to go
+     * @return the distfunction we found
+    */
+    DistFunction AStar( Vertex &from , Vertex &to,const CompWeight& compweight);
+
+    /**
      * @brief find the optimal path from vertex from to dest
      * @param from - the vertex we start from
      * @param dest - the vertex we finish from
@@ -71,15 +80,32 @@ private:
     */
     deque<Edge> AddEdge(deque<Edge>& old_edges,Edge edge);
 
+   
+
     /**
-     * @brief do A star algo to find the dist function
-     * @param from the vertex we start from
-     * @param to the vertex we want to go
-     * @return the distfunction we found
+     * @brief init the data stuctre
+     * for A^* algo
     */
-    DistFunction AStar( Vertex &from , Vertex &to);
+    void InitAStar(Heap& heap,Vertex &from,DistFunction& distfunc);
 
+    /**
+     * @brief fix the distfunction for all vertexs we found
+     * a route to
+    */
+    void FixDist(Dist*& dist,Heap& heap,DistFunction& distfunc,
+    const CompWeight& compweight,Vertex& to);
 
+    /**
+     * @brief fix the heap
+    */
+    void FixHeap(Dist& dist,Heap& heap);
+
+    /**
+     * @brief check if vertex u need a fix because 
+     * of vertex v
+    */
+    bool is_need_fix(Dist& u,Dist*& v,const Edge& edge,
+    const CompWeight& compweight,Vertex &to);
     vector<Vertex> vertexs;
 
 };

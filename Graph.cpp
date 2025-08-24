@@ -70,10 +70,55 @@ deque<Edge> Graph::AddEdge(deque<Edge>& old_edges,Edge edge){
 
 
 
+void Graph::InitAStar(Heap& heap,Vertex &from,DistFunction& distfunc){
+    Dist& dist = distfunc[from];
+    dist.Init();
+    heap.Push(dist);
+}
+
+void Graph::FixHeap(Dist& dist,Heap& heap){
+    if(dist.is_on_heap){
+        heap.SiftUP(dist.heap_idx);
+    }
+    heap.Push(dist);
+}
 
 
-DistFunction Graph::AStar(Vertex &from, Vertex& to){
+
+void Graph::FixDist(Dist*& dist,Heap& heap,DistFunction& distfunc,
+const CompWeight& compweight,Vertex &to){
+    Vertex* vert = dist->vertex;
+    for(auto edge: vert->out_edges){
+        Dist& edge_dist = distfunc[*(edge.vertex)];
+        if(is_need_fix(edge_dist,dist,edge,compweight,to)){
+            FixHeap(edge_dist,heap);
+        }
+    }
+}
+
+bool Graph::is_need_fix(Dist& u,Dist*& v,
+const Edge& edge,const CompWeight& compweight,Vertex& to){
+    Dist new_dist = u.BuildFixDist(*v,edge,to,compweight);
+    bool is_fixed = new_dist < u;
+    if(is_fixed){
+        u = new_dist;
+    }
+    return is_fixed;
+}
+
+
+
+DistFunction Graph::AStar(Vertex &from, Vertex& to,const CompWeight& compweight){
     DistFunction distfunc;
+    Heap heap;
+    InitAStar(heap,from,distfunc);
+    while(!heap.empty()){
+        Dist* dist = heap.Pop();
+        if(dist->vertex == &to){
+            break;
+        }
+        FixDist(dist,heap,distfunc,compweight,to);
+    }
     return distfunc;
 }
 
