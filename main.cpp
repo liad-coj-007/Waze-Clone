@@ -1,57 +1,77 @@
-#include <iostream>
-#include <deque>
+#include "Heap.h"
 #include <cassert>
-#include "Graph.h"
+#include <iostream>
 
-using namespace std;
+void sort(Dist*& arr,const int n,const int testnum);
 
-// פונקציה להדפסת כל הקשתות של צומת
-void PrintEdges(const Vertex& v) {
-    cout << "Vertex " << v.idx << " edges: ";
-    for (const auto& e : v.edges) {
-        cout << e.vertex->idx << "(" << e.road.dist << ") ";
+void TestSort( Dist* dist,const int n,const int testnum);
+
+void Test();
+
+Dist* GenerateRandomDistArray(int n) {
+    Dist* arr = new Dist[n]();
+
+    for(int i = 0; i < n; ++i) {
+        arr[i].totaldist = rand() % (n + 1); 
+        arr[i].is_inf = false;
+        arr[i].heap_idx = 0;
+        arr[i].is_on_heap = false;
+        arr[i].vertex = nullptr; 
     }
-    cout << endl;
+
+    return arr;
 }
 
-// פונקציה עזר להשוואת edges לפי idx (למיון)
-bool EdgeShouldComeBefore(const Edge& newEdge, const Edge& existingEdge) {
-    return newEdge.vertex->idx < existingEdge.vertex->idx;
-}
+void ErrorMsg(const int idx,const Dist& d1,const Dist& d2);
 
-// הוספת קשת בצורה ממוינת
-void AddEdgeSorted(Vertex& from, Vertex& to) {
-    // אם הקשת קיימת, מחזירים
-    Graph* graph = from.my_graph;
-    graph->AddEdge(from,to,0);
-}
 
 int main() {
-    Graph graph;
-
-    // הוספת צמתים
-    size_t idx1 = graph.AddVertex(0,0);
-    size_t idx2 = graph.AddVertex(1,1);
-    size_t idx3 = graph.AddVertex(2,2);
-
-    assert(idx2 > idx1);
-    assert(idx3 > idx2);
-
-    // הוספת קשתות
-    AddEdgeSorted(graph[idx1], graph[idx2]);
-    AddEdgeSorted(graph[idx1], graph[idx3]);
-    AddEdgeSorted(graph[idx2], graph[idx3]);
-
-    // הדפסת רשימות הקשתות
-    PrintEdges(graph[idx1]); // צריך לראות idx2 ואז idx3
-    PrintEdges(graph[idx2]); // צריך לראות idx3
-    PrintEdges(graph[idx3]); // צריך להיות ריק
-
-    // בדיקות assert
-    assert(graph[idx1].edges.size() == 2);
-    assert(graph[idx1].edges[0].vertex->idx == idx2);
-    assert(graph[idx1].edges[1].vertex->idx == idx3);
-
-    cout << "All tests passed!" << endl;
+    Test();
     return 0;
+}
+
+void ErrorMsg(const int idx,const Dist& d1,const Dist& d2){
+    cout << "(" << (idx -1) << ", " << d1.totaldist << ")\t>\t";
+    cout << "(" << (idx) << ", " << d2.totaldist << ")" << endl;
+}
+
+void Test(){
+    int tests[] = {1,100,10000,200000,123456};
+    const int n = 5;
+    for(int i = 0;i < n; i++){
+        Dist* arr = GenerateRandomDistArray(tests[i]);
+        sort(arr,tests[i],i);
+        delete [] arr;
+    }
+}
+
+void sort(Dist*& arr,const int n,const int testnum){
+    Heap heap;
+    for(int i = 0; i < n; i++){
+        heap.Push(arr[i]);
+    }
+
+    Dist* sort_arr = new Dist[n]();
+    for(int i = 0; i < n; i++){
+        Dist* dist = heap.Pop();
+        sort_arr[i] = *dist;
+    }
+    TestSort(sort_arr,n,testnum);
+    delete [] sort_arr;
+}
+
+void TestSort( Dist* dist,const int n,const int testnum){
+    for(int i = 1; i < n; i++){
+        
+        bool is_correct = (dist[i-1].totaldist <= dist[i].totaldist);
+        if(!is_correct){
+            ErrorMsg(i,dist[i-1],dist[i]);
+        }
+        assert(is_correct);
+    }
+
+    std::cout << "\033[1;32m"; // Bold Green
+    std::cout << "Test " << testnum << " passed!\n";
+    std::cout << "\033[0m"; // Reset color
+    std::cout << "=======================" << std::endl;
 }

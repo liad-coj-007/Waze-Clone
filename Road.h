@@ -31,6 +31,7 @@ public:
      * customer needs.
     */
     double comp_Weight(const CompWeight& comp)const;
+
     size_t flags;
     double dist;
 
