@@ -109,7 +109,7 @@ const Edge& edge,const CompWeight& compweight,Vertex& to){
 
 
 DistFunction Graph::AStar(Vertex &from, Vertex& to,const CompWeight& compweight){
-    DistFunction distfunc;
+    DistFunction distfunc(vertexs.size());
     Heap heap;
     InitAStar(heap,from,distfunc);
     while(!heap.empty()){
