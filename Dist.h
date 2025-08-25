@@ -54,6 +54,7 @@ public:
     double huristic;
     size_t heap_idx;
     bool is_on_heap;
+    size_t route_size;
 
 };
 

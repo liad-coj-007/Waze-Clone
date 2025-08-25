@@ -3,6 +3,7 @@
 #include <cstddef>  // size_t
 #include "Road.h"
 #include "CompWeight.h"
+#include <vector>
 class Vertex; // forward declaration
 class Graph;
 
@@ -31,8 +32,8 @@ struct Vertex {
     Graph* my_graph = nullptr;
 
     // edges sorted
-    std::deque<Edge> in_edges;
-    std::deque<Edge> out_edges;
+    std::vector<Edge> in_edges;
+    std::vector<Edge> out_edges;
 
     Vertex(const double& lat, const double& lon);
 };

@@ -19,7 +19,7 @@ Dist::Dist(Vertex* vertex){
     is_on_heap = false;
     heap_idx = 0;
     huristic = 0;
-    
+    route_size = 0;
 }
 
 void Dist::SetDist(const double &dist){
@@ -55,6 +55,7 @@ Vertex& to,const CompWeight& compweight){
     new_dist.vertex = edge.vertex;
     new_dist.huristic = getDistance(*(new_dist.vertex),to);
     new_dist.totaldist += edge.getWeight(compweight);
+    new_dist.route_size++;
     return new_dist;
 }
 
