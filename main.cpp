@@ -1,70 +1,57 @@
 #include "Graph.h"
 #include "Vertex.h"
 #include "CompByDist.h"
+#include "DistFunc.h"
 #include <iostream>
 #include <chrono>
-#include "DistFunc.h"
 
 int main() {
     Graph g;
 
-    // פרמטרים
-    const size_t ROWS = 1000;    // יוצרת גריד 500x500 => 250,000 צמתים
-    const size_t COLS = 1000;
+    const size_t ROWS = 1500;   // גודל גריד
+    const size_t COLS = 1500;
     const size_t N = ROWS * COLS;
 
-    // comparator לפי מרחק
     CompDist comp;
 
-    // יוצרים צמתים במבנה grid
+    // יצירת צמתים
     std::vector<size_t> indices(N);
-    for(size_t i = 0; i < ROWS; ++i) {
-        for(size_t j = 0; j < COLS; ++j) {
-            size_t idx = g.AddVertex(i, j);  // צומת ב-grid
+    for (size_t i = 0; i < ROWS; ++i) {
+        for (size_t j = 0; j < COLS; ++j) {
+            size_t idx = g.AddVertex(i, j);
             indices[i * COLS + j] = idx;
         }
     }
 
-    // יוצרים קשתות ל־grid
-    for(size_t i = 0; i < ROWS; ++i) {
-        for(size_t j = 0; j < COLS; ++j) {
+    // יצירת קשתות (לימין ולמטה)
+    for (size_t i = 0; i < ROWS; ++i) {
+        for (size_t j = 0; j < COLS; ++j) {
             size_t idx = i * COLS + j;
-            // חיבור לימין
-            if(j + 1 < COLS)
+            if (j + 1 < COLS)
                 g.AddEdge(g[indices[idx]], g[indices[idx + 1]], 1);
-            // חיבור למטה
-            if(i + 1 < ROWS)
+            if (i + 1 < ROWS)
                 g.AddEdge(g[indices[idx]], g[indices[idx + COLS]], 1);
         }
     }
 
-    // בחירת צמתים אקראיים להתחלה וסיום (seed קבוע)
-    size_t start = indices[0];              // פינה עליונה שמאלית
-    size_t end   = indices[N - 1];          // פינה תחתונה ימנית
+    size_t start_idx = indices[0];        // פינה עליונה שמאלית
+    size_t end_idx   = indices[N - 1];    // פינה תחתונה ימנית
 
     auto t1 = std::chrono::high_resolution_clock::now();
-    DistFunction distfunc = g.AStar(g[start], g[end], comp);
+    Path path = g.find_route(g[start_idx], g[end_idx], comp);
     auto t2 = std::chrono::high_resolution_clock::now();
 
-    Dist& dist = distfunc[g[end]];
-
-    if(dist.is_inf)
-        std::cout << "Dist = infty\n";
-    else
-        std::cout << "Dist = " << dist.totaldist << "\n";
+    if (path.is_inf()) {
+        std::cout << "No path found.\n";
+    } else {
+        std::cout << "Path size: " << path.size() << " edges\n";
+    }
 
     auto elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
     auto elapsed_us = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
 
-    std::cout << "A* elapsed time: " << elapsed_ms << " ms\n";
-    std::cout << "A* elapsed time: " << elapsed_us << " µs\n";
-    // const size_t n = 100000000;
+    std::cout << "find_route elapsed time: " << elapsed_ms << " ms\n";
+    std::cout << "find_route elapsed time: " << elapsed_us << " µs\n";
 
-    // DistFunction distfunc(n);
-    // for(int i = 0; i < n; i++){
-    //     Vertex v(2,2);
-    //     v.idx = i;
-    //     distfunc[v].totaldist = i;
-    // }
     return 0;
 }

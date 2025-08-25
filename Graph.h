@@ -9,9 +9,12 @@ using namespace std;
 
 
 
-class Path{
+struct Path{
     std::deque<Edge> edges;
-    double dist;
+    Dist dist;
+    Path(DistFunction& distfunc,Vertex& vertex);
+    bool is_inf()const;
+    size_t size()const;
 };
 
 class Graph{
@@ -66,19 +69,26 @@ private:
     /**
      * @brief return the edge of the graph
     */
-    Edge* find_edge(const Vertex& v1,const Vertex& v2)const;
+    Edge* find_edge( Vertex& v1, Vertex& v2)const;
+
+    int find_edge(const vector<Edge>& edges,const Vertex& v2)const;
+    /**
+     * @brief find the next vertex on the road
+    */
+    Edge& find_next_vertex(Vertex &v,DistFunction& distfunc,
+    const CompWeight& compweight);
 
     /**
      * @brief find the edge base on vertex
     */
-    Edge* find_edge(const Vertex& vertex, deque<Edge>& edges);
+    Edge* find_edge(const Vertex& vertex, vector<Edge>& edges);
 
     /**
      * @brief add edge to the deque
      * @param old_edges - edges list we want to add to
      * @param edge - the edge we add
     */
-    deque<Edge> AddEdge(deque<Edge>& old_edges,Edge edge);
+    void AddEdge(vector<Edge>& old_edges,Edge edge);
 
    
 
