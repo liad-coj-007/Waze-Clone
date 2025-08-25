@@ -63,15 +63,3 @@ public:
 bool operator<(const Dist& d1,const Dist& d2);
 
 
-class DistFunction{
-public:
-    DistFunction() = default;
-    /**
-     * @brief get the dist of vertex if it don't exist create a new one
-     * and return it
-     * @return the dist of the vertex
-    */
-    Dist& operator[]( Vertex &vertex);
-private:
-    unordered_map<Vertex,Dist,VertexHash> map;
-};

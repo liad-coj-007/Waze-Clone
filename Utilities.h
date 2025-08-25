@@ -18,3 +18,5 @@ double getDistance(const Vertex& v1,const Vertex &v2);
 
 
 
+
+

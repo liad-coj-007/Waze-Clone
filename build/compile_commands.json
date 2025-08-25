@@ -38,5 +38,10 @@
   "directory": "/root/projects/Waze/build",
   "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/Heap.cpp.o -c /root/projects/Waze/Heap.cpp",
   "file": "/root/projects/Waze/Heap.cpp"
+},
+{
+  "directory": "/root/projects/Waze/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/DistFunc.cpp.o -c /root/projects/Waze/DistFunc.cpp",
+  "file": "/root/projects/Waze/DistFunc.cpp"
 }
 ]

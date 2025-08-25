@@ -177,6 +177,30 @@ Dist.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Dist.cpp.s
 .PHONY : Dist.cpp.s
 
+DistFunc.o: DistFunc.cpp.o
+.PHONY : DistFunc.o
+
+# target to build an object file
+DistFunc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DistFunc.cpp.o
+.PHONY : DistFunc.cpp.o
+
+DistFunc.i: DistFunc.cpp.i
+.PHONY : DistFunc.i
+
+# target to preprocess a source file
+DistFunc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DistFunc.cpp.i
+.PHONY : DistFunc.cpp.i
+
+DistFunc.s: DistFunc.cpp.s
+.PHONY : DistFunc.s
+
+# target to generate assembly for a file
+DistFunc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DistFunc.cpp.s
+.PHONY : DistFunc.cpp.s
+
 Graph.o: Graph.cpp.o
 .PHONY : Graph.o
 
@@ -336,6 +360,9 @@ help:
 	@echo "... Dist.o"
 	@echo "... Dist.i"
 	@echo "... Dist.s"
+	@echo "... DistFunc.o"
+	@echo "... DistFunc.i"
+	@echo "... DistFunc.s"
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"

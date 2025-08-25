@@ -4,7 +4,7 @@ using namespace std;
 #include "Vertex.h"
 #include "Dist.h"
 #include "Heap.h"
-
+#include "DistFunc.h"
 
 
 

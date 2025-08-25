@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/projects/Waze/CompByDist.cpp" "CMakeFiles/main.dir/CompByDist.cpp.o" "gcc" "CMakeFiles/main.dir/CompByDist.cpp.o.d"
   "/root/projects/Waze/Dist.cpp" "CMakeFiles/main.dir/Dist.cpp.o" "gcc" "CMakeFiles/main.dir/Dist.cpp.o.d"
+  "/root/projects/Waze/DistFunc.cpp" "CMakeFiles/main.dir/DistFunc.cpp.o" "gcc" "CMakeFiles/main.dir/DistFunc.cpp.o.d"
   "/root/projects/Waze/Graph.cpp" "CMakeFiles/main.dir/Graph.cpp.o" "gcc" "CMakeFiles/main.dir/Graph.cpp.o.d"
   "/root/projects/Waze/Heap.cpp" "CMakeFiles/main.dir/Heap.cpp.o" "gcc" "CMakeFiles/main.dir/Heap.cpp.o.d"
   "/root/projects/Waze/Road.cpp" "CMakeFiles/main.dir/Road.cpp.o" "gcc" "CMakeFiles/main.dir/Road.cpp.o.d"

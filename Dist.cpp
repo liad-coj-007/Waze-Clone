@@ -60,15 +60,15 @@ Vertex& to,const CompWeight& compweight){
 
 
 
-Dist& DistFunction::operator[]( Vertex& vertex){
-    auto it = map.find(vertex);
-    if(it != map.end()){
-        return it->second;
-    }
+// Dist& DistFunction::operator[](Vertex& vertex){
+//     auto it = map.find(vertex);
+//     if(it != map.end()){
+//         return it->second;
+//     }
 
-    map.emplace(vertex, Dist(&vertex));
-    return map[vertex];
-}
+//     map.emplace(vertex, Dist(&vertex));
+//     return map[vertex];
+// }
 
 bool operator<(const Dist &d1,const Dist &d2){
     if(d2.is_inf && !d1.is_inf){

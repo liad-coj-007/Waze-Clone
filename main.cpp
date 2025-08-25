@@ -3,13 +3,14 @@
 #include "CompByDist.h"
 #include <iostream>
 #include <chrono>
+#include "DistFunc.h"
 
 int main() {
     Graph g;
 
     // פרמטרים
-    const size_t ROWS = 750;    // יוצרת גריד 500x500 => 250,000 צמתים
-    const size_t COLS = 750;
+    const size_t ROWS = 1000;    // יוצרת גריד 500x500 => 250,000 צמתים
+    const size_t COLS = 1000;
     const size_t N = ROWS * COLS;
 
     // comparator לפי מרחק
@@ -57,6 +58,13 @@ int main() {
 
     std::cout << "A* elapsed time: " << elapsed_ms << " ms\n";
     std::cout << "A* elapsed time: " << elapsed_us << " µs\n";
+    // const size_t n = 100000000;
 
+    // DistFunction distfunc(n);
+    // for(int i = 0; i < n; i++){
+    //     Vertex v(2,2);
+    //     v.idx = i;
+    //     distfunc[v].totaldist = i;
+    // }
     return 0;
 }
