@@ -21,7 +21,9 @@ var greenIcon = L.icon({
 });
 // ========================================================
 
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map_pos = [32.07, 34.79];
+
+var map = L.map('map').setView(map_pos, 13);
 
 
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
