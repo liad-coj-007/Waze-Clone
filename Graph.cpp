@@ -14,6 +14,14 @@ size_t Path::size()const{
     return edges.size();
 }
 
+Graph::Graph(const size_t size){
+    vertexs.reserve(size);
+}
+
+size_t Graph::size()const{
+    return vertexs.size();
+}
+
 size_t Graph::AddVertex(const double& lat,const double &lon){
     Vertex vert(lat,lon);
     vert.my_graph = this;
@@ -66,13 +74,7 @@ Edge* Graph::find_edge(const Vertex& vertex, vector<Edge>& edges){
 
 
 void Graph::AddEdge( Vertex& v1, Vertex &v2,const size_t flags){
-   Edge* my_edge = find_edge(v1,v2);
-   if (my_edge != nullptr){
-        my_edge->road.flags = flags;
-        Edge* e2 = find_edge(v1,v2.in_edges);
-        e2->road.flags = flags;
-        return;
-   }
+
 
    Edge e1(v1,v2,flags);
    AddEdge(v1.out_edges,e1);

@@ -26,6 +26,18 @@ public:
     Graph() = default;
 
     /**
+     * @brief build a graph with
+     * size vertexs
+    */
+    Graph(const size_t size);
+
+    /**
+     * @brief return the size of the 
+     * graph
+    */
+    size_t size()const;
+
+    /**
      * @brief add a vertex in the graph
      * @param lat - the lat of the new vertex
      * @param lon - the lon of the new vertex
