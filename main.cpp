@@ -29,6 +29,8 @@ Graph BuildNodes();
 json CheckFile(const string& file_name);
 
 
+void PrintDist(const Dist& dist);
+
 
 int main() {
     Graph graph = buildGraph();
@@ -37,25 +39,38 @@ int main() {
     DistFunction distfunc = graph.AStar(graph[0],
     graph[final_idx],comp);
     cout <<"Graph size: "  << graph.size() << endl;
-    cout << distfunc[graph[final_idx]].totaldist << endl;
+    PrintDist(distfunc[graph[final_idx]]);
     return 0;
+}
+
+void PrintDist(const Dist& dist){
+    const string msg = "dist = ";
+    cout << msg;
+    if(dist.is_inf){
+        cout << "infty" << endl;
+        return;
+    }
+    cout << dist.totaldist << endl;
+
 }
 
 Graph buildGraph(){
     Graph graph = BuildNodes();
-    const string edge_database = "../data_base/edges.json";
+    const string edge_database = "../data_base/edges.geojson";
     json js_file = CheckFile(edge_database);
     const string properties = "properties";
+    const string src_key = "u";
+    const string target_key = "v";
     for(auto& edge : js_file["features"]){
-        size_t src = edge[properties]["u_index"];
-        size_t target = edge[properties]["v_index"];
+        size_t src = edge[properties][src_key];
+        size_t target = edge[properties][target_key];
         graph.AddEdge(graph[src],graph[target],0);
     }
     return graph;
 }
 
 Graph BuildNodes(){
-    const string nodedatabase_name = "../data_base/nodes.json";
+    const string nodedatabase_name = "../data_base/nodes.geojson";
     json js_file = CheckFile(nodedatabase_name);
     string nodes_data = "features";
     size_t size = js_file[nodes_data].size();
