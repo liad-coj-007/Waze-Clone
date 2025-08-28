@@ -1,8 +1,8 @@
 #include "RTree.h"
 #include "Box.h"
+#include <cmath>
 
-
-const size_t max_child = 8;
+const size_t max_child = 16;
 
 
 RNode::RNode(const Box& box,const size_t idx):box(box){
@@ -32,20 +32,20 @@ void RTree::AddNode(RNode& node,RNode& new_node){
 
 
 RNode& RTree::ChoseChild( RNode& node, RNode& new_node){
-    RNode& best_child = node.childrens[0];
-    double min_diff_area = getDiffArea(best_child.box,
+    RNode* best_child = &node.childrens[0];
+    double min_diff_area = getDiffArea(best_child->box,
     new_node.box);
     for(auto& it: node.childrens){
         double diff = getDiffArea(it.box,new_node.box);
         if(diff < min_diff_area){
             min_diff_area = diff;
-            best_child = it;
+            best_child = &it;
         }else if(diff == min_diff_area){
-            best_child = best_child.box.getArea() < it.box.getArea() 
-            ? best_child : it;
+            best_child = best_child->box.getArea() > it.box.getArea() 
+            ? best_child : &it;
         }
     }
-    return best_child;
+    return *best_child;
 }
 
 double RTree::getDiffArea(const Box& b1,const Box& b2)const{
@@ -54,7 +54,9 @@ double RTree::getDiffArea(const Box& b1,const Box& b2)const{
     if(area2 <= area1){
         return 0;
     }
-    return area2 - area1;
+    Box temp = b1;
+    temp.Union(b2);
+    return temp.getArea() - area1;
 }
 
 void RTree::AddBox(const Box& box,const size_t idx){
@@ -73,26 +75,25 @@ const double lon) {
         return node;
     }
 
-    RNode& best_child = node.childrens[0];
-    bool is_changed = false;
+    RNode* best_child = &node.childrens[0];
+    double min_dist = best_child->box.getDistance(lat,lon);
     for(auto& it : node.childrens){
-        bool is_in_box = it.box.isInBox(lat,lon);
-        if(is_in_box && !is_changed){
-            is_changed = true;
-            best_child = it;
-        }else if(is_in_box && 
-            it.box.getArea() < best_child.box.getArea()){
-            best_child = it;
+        double dist = it.box.getDistance(lat,lon);
+        if(dist < min_dist){
+            min_dist = dist;
+            best_child = &it;
         }
     }
     
-    return getClosestNode(best_child,lat,lon);
+    return getClosestNode(*best_child,lat,lon);
 }
 
 size_t RTree::getCloseBox(const double &lat,const double& lon){
     RNode& node = getClosestNode(root,lat,lon);
     return node.idx;
 }
+
+
 
 
 

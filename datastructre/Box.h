@@ -26,6 +26,11 @@ public:
      * @brief check if the point is on box
     */
     bool isInBox(const double& lat,const double lon)const;
+
+    /**
+     * @brief get the distance from the point
+    */
+    double getDistance(const double& lat,const double& lon)const;
 private:
     double low_lat,low_lon;
     double high_lat,high_lon;
