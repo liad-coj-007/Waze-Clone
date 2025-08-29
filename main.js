@@ -1,4 +1,7 @@
 import {Point } from "./Point.js";
+import { Road } from "./Road.js";
+
+
 
 //colors 
 // ===============================================================
@@ -37,3 +40,39 @@ var start_point = new Point(L.marker([32.07, 34.79], { draggable: true,icon: gre
 start_point.Popup();
 var end_point = new Point(L.marker([31.9, 34.79], { draggable: true,icon: redIcon}).addTo(map),"finish");
 end_point.Popup();
+
+const run_button = document.getElementById("run");
+run_button.addEventListener("click",find_path);
+
+var road = new Road(map);
+
+function find_path(event){
+   event.preventDefault();
+   writePointsInput();
+
+}
+
+function writePointsInput(){
+  const data = {
+    start_point: {
+      lat: start_point.getPos().lat,
+      lon: start_point.getPos().lon
+    },end_point: {
+      lat: end_point.getPos().lat,
+      lon: end_point.getPos().lon
+    }
+  };
+
+  const jsondata = JSON.stringify(data,null,2);
+
+
+  const blob = new Blob([jsondata], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "road_data.json";
+  a.click();
+  URL.revokeObjectURL(url);
+
+
+}
