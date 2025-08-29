@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Waze Demo</title>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+<style>
+    #map{
+      width: 100%;
+      height: 100vh;
+    }
+
+  /* button design */
+  #run {
+    position: absolute;      
+    top: 680px;              
+    right: 20px;          
+    padding: 10px 20px;      
+    font-size: 18px;         
+    background-color: #1d4ed8; 
+    color: white;           
+    border: none;             
+    border-radius: 10px;      
+    cursor: pointer;          
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    z-index: 1000;          
+    transition: background 0.2s;
+  }
+
+  #run:hover {
+    background-color: #2563eb; /* שינוי צבע בעת ריחוף */
+  }
+
+  #run:active {
+    background-color: #1e40af; /* צבע בעת לחיצה */
+  }
+
+
+
+</style>
+</head>
+<body>
+
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+     <script type="module" src="main.js" ></script>
+
+     <button id = "run" >find road</button>
+
+</body>
+</html>
+<!-- Leaflet js -->
+
+<div id="map"></div>
+
+
