@@ -44,31 +44,40 @@ run_button.addEventListener("click",find_path);
 
 var road = new Road(map);
 
-function find_path(event){
-   event.preventDefault();
-   writePointsInput();
+async function find_path(event) {
+  event.preventDefault();
 
-}
-
-function writePointsInput(){
+  // יוצרים את data
   const data = {
     start_point: {
       lat: start_point.getPos().lat,
       lon: start_point.getPos().lon
-    },end_point: {
+    },
+    end_point: {
       lat: end_point.getPos().lat,
       lon: end_point.getPos().lon
     }
   };
 
-  const jsondata = JSON.stringify(data,null,2);
+  try {
+    await fetch('http://localhost:3000/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    console.log('Saved to server');
 
+    // שולחים ל־binary
+    const res = await fetch('/run-binary', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-  fetch('http://localhost:3000/save', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  }).then(res => console.log('Saved to server'));
+    const result = await res.json();
+    console.log("Binary output:", result.output);
 
-
+  } catch (err) {
+    console.error(err);
+  }
 }
