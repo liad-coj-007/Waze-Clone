@@ -5,12 +5,13 @@ using namespace std;
 #include "Dist.h"
 #include "Heap.h"
 #include "DistFunc.h"
+#include "datastructre/KDTree.h"
 
 
 
 
 struct Path{
-    std::deque<Edge> edges;
+    deque<vector<double>> edges;
     Dist dist;
     Path(DistFunction& distfunc,Vertex& vertex);
     bool is_inf()const;
@@ -43,7 +44,7 @@ public:
      * @param lon - the lon of the new vertex
      * @return return the idx the vertex is on
     */
-    size_t AddVertex(const double& lat,const double &lon);
+    size_t AddVertex(const  double& lat,const  double &lon);
 
     /**
      * @brief return the vertex that found on index idx
@@ -74,6 +75,10 @@ public:
     */
     Path find_route( Vertex& from, Vertex &dest,const CompWeight& comp);
 
+    /**
+     * @brief get the close vertex to the point
+    */
+    Vertex& getCloseVertex(const double &lat,const double& lon);
 
 
 private:
@@ -128,6 +133,9 @@ private:
     */
     bool is_need_fix(Dist& u,Dist*& v,const Edge& edge,
     const CompWeight& compweight,Vertex &to);
+
+
     vector<Vertex> vertexs;
+    KDTree tree;
 
 };

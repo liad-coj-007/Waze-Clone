@@ -22,13 +22,19 @@ size_t Graph::size()const{
     return vertexs.size();
 }
 
-size_t Graph::AddVertex(const double& lat,const double &lon){
+size_t Graph::AddVertex(const  double& lat,const  double &lon){
     Vertex vert(lat,lon);
     vert.my_graph = this;
     vertexs.push_back(vert);
     size_t idx =  vertexs.size() - 1;
     vertexs[idx].idx = idx;
+    tree.AddPoint(vert.lat,vert.lon,idx);
     return idx;
+}
+
+Vertex& Graph::getCloseVertex(const double& lat,const double& lon){
+    Vertex point(lat,lon);
+    return vertexs[tree.getClosestIdx(point.lat,point.lon)];
 }
 
 Vertex& Graph::operator[](const size_t idx){
@@ -144,7 +150,9 @@ Path Graph::find_route( Vertex& from, Vertex &dest,const CompWeight& comp){
 
     while(!(current == from)){
         Edge& tmp = find_next_vertex(current,distfunc,comp);
-        path.edges.push_front(tmp);
+        Vertex* vertex = tmp.vertex;
+        vector<double> point = {vertex->lat,vertex->lon};
+        path.edges.push_front(point);
         current = *(tmp.vertex);
     }
     return path;
