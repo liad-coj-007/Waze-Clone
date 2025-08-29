@@ -7,7 +7,7 @@ export class Road{
     }
 
     BuildRoad(new_road){
-        if(road){
+        if(this.#road){
             this.#road.remove();
         }
 

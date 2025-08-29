@@ -6,8 +6,16 @@
 using namespace std;
 #include <nlohmann/json.hpp>
 #include "Dist.h"
-
 using json = nlohmann::json;
+#include <random>
+#include <algorithm>
+
+
+
+struct Point {
+    double lat;
+    double lon;
+};
 
 
 /**
@@ -31,17 +39,69 @@ json CheckFile(const string& file_name);
 
 void PrintDist(const Dist& dist);
 
+void PrintVertex(const Vertex& vertex);
+
+
+double computeDistance(double lat1, double lon1, 
+double lat2, double lon2);
+
+
+/**
+ * @brief find the sortest road for 
+ * the user and print it on json 
+ * style 
+*/
+void FindRoad(json &input,Graph& graph);
+
+/**
+ * @brief write the path to the out file
+*/
+void WritePath(json& out,Path& path);
 
 int main() {
     Graph graph = buildGraph();
-    CompDist comp;
-    size_t final_idx = graph.size() - 1;
-    DistFunction distfunc = graph.AStar(graph[0],
-    graph[final_idx],comp);
-    cout <<"Graph size: "  << graph.size() << endl;
-    PrintDist(distfunc[graph[final_idx]]);
+    string input;
+    json input_file;
+    std::cin >> input_file;  
+    FindRoad(input_file,graph);
     return 0;
 }
+
+void FindRoad(json &input,Graph& graph){
+    const string start_point = "start_point";
+    const string end_point  = "end_point";
+    const string lat = "lat";
+    const string lon = "lon";
+    CompDist compdist;
+    Vertex& start = graph.getCloseVertex(
+        input[start_point][lat],input[start_point][lon]);
+    Vertex& end = graph.getCloseVertex(
+        input[end_point][lat],input[end_point][lon]);
+    Path path = graph.find_route(start,end,compdist);
+    json out;
+    const string dist = "dist";
+    WritePath(out,path);
+    cout << out.dump() << endl;
+
+}
+
+void WritePath(json& out,Path& path){
+    const string dist = "dist";
+    if(path.is_inf()){
+        out[dist] = std::numeric_limits<double>::infinity();
+    }else{
+        out[dist] = path.dist.totaldist;
+    }
+
+    out["road"] = path.edges;
+}
+
+
+void PrintVertex(const Vertex& vertex){
+    cout << "lat: " << vertex.lat << "\nlon: " << vertex.lon 
+    << endl;
+}
+
 
 void PrintDist(const Dist& dist){
     const string msg = "dist = ";
@@ -56,7 +116,7 @@ void PrintDist(const Dist& dist){
 
 Graph buildGraph(){
     Graph graph = BuildNodes();
-    const string edge_database = "../data_base/edges.geojson";
+    const string edge_database = "data_base/edges.geojson";
     json js_file = CheckFile(edge_database);
     const string properties = "properties";
     const string src_key = "u";
@@ -70,7 +130,7 @@ Graph buildGraph(){
 }
 
 Graph BuildNodes(){
-    const string nodedatabase_name = "../data_base/nodes.geojson";
+    const string nodedatabase_name = "data_base/nodes.geojson";
     json js_file = CheckFile(nodedatabase_name);
     string nodes_data = "features";
     size_t size = js_file[nodes_data].size();

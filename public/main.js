@@ -44,10 +44,32 @@ run_button.addEventListener("click",find_path);
 
 var road = new Road(map);
 
+
+/**
+ * @brief draw the road
+ * to the user
+ * @param {*} res 
+ * @returns 
+ */
+function buildRoad(res){
+  if(!res.success){
+    console.error("the road is not exist!");
+    return;
+  }
+
+  road.BuildRoad(res.road);
+
+}
+
+
+/**
+ * find the path 
+ * for the user
+ * @param {*} event 
+ */
 async function find_path(event) {
   event.preventDefault();
 
-  // יוצרים את data
   const data = {
     start_point: {
       lat: start_point.getPos().lat,
@@ -67,7 +89,6 @@ async function find_path(event) {
     });
     console.log('Saved to server');
 
-    // שולחים ל־binary
     const res = await fetch('/run-binary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -75,9 +96,10 @@ async function find_path(event) {
     });
 
     const result = await res.json();
-    console.log("Binary output:", result.output);
-
+    buildRoad(result);
   } catch (err) {
     console.error(err);
   }
 }
+
+

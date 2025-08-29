@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const app = express();
-const { execFile } = require('child_process');
+const { spawnSync  } = require('child_process');
 const { error } = require('console');
 const { stderr, stdout } = require('process');
 
@@ -24,15 +24,37 @@ function getResult(req,res){
     
     const binaryPath = 'build/main';
     const args = ["save/road_data.json"]; 
-      
-    execFile(binaryPath, args, (error, stdout, stderr) => {
-        if (error) {
-            console.error("Error: ", error);
-            return res.status(500).send({ error: error.message });
-        }
-        console.log(stdout);
-        res.send({ output: stdout, error: stderr });
+
+    const data = req.body;
+
+    const child = spawnSync(binaryPath, [], {
+        input: JSON.stringify(data), 
+        encoding: 'utf-8'
     });
+    
+    sendRoad(child,res);
+}
+
+function sendRoad(child,res){
+    if(child.error){
+        console.error("child process failed:",child.error);
+        return;
+    }
+
+    try{
+        console.log("STDOUT from child:", 
+        JSON.stringify(child.stdout));
+        const json = JSON.parse(child.stdout);
+        res.send({
+            success : isFinite(json.dist),
+            road : json.road
+        });
+
+    }catch(err){
+        console.error("invalid JSON from child:",err);
+        res.status(500).send({ error: 'Invalid JSON from binary' });
+    }
+
 
 }
 
