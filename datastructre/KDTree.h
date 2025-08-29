@@ -2,7 +2,7 @@
 #include <cstddef>
 struct KDNode {
     size_t idx;
-    double lat,lon;
+    long double lat,lon;
     KDNode* left;
     KDNode* right;
 
@@ -20,14 +20,14 @@ public:
     /**
      * @brief add a new point to the tree
     */
-    void AddPoint(const double& lat,const double& lon,
+    void AddPoint(const  double& lat,const  double& lon,
     const size_t idx);
 
     /**
      * @brief return the idx of the
      * closest point 
     */
-    size_t getClosestIdx(const double& lat,const double& lon);
+    size_t getClosestIdx(const  double& lat,const  double& lon);
 
     ~KDTree();
 
@@ -66,7 +66,7 @@ private:
      * @brief return the distance between 
      * two points
     */
-    double getDistance( KDNode*& p1, KDNode*& p2)const;
+    long double getDistance( KDNode*& p1, KDNode*& p2)const;
 
 
     KDNode* root;
